@@ -23,6 +23,6 @@ class Singleton {
 const singleton1 = Singleton.getInstance();
 const singleton2 = Singleton.getInstance();
 
-console.log(singleton1 === singleton1);
+console.log(singleton1 === singleton2);
 
 singleton1.sampleMethod();
