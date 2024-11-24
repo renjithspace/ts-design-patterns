@@ -1,28 +1,28 @@
-class Singleton {
-  static #instance: Singleton | null = null;
+class DatabaseConnection {
+  static #instance: DatabaseConnection | null = null;
 
   constructor() {
-    if (Singleton.#instance) {
-      throw new Error("Singleton already constructed");
+    if (DatabaseConnection.#instance) {
+      throw new Error("A database connection already exists.");
     }
   }
 
-  static getInstance(): Singleton {
-    if (Singleton.#instance) {
-      return Singleton.#instance;
+  static create(): DatabaseConnection {
+    if (DatabaseConnection.#instance) {
+      return DatabaseConnection.#instance;
     }
-    Singleton.#instance = new Singleton();
-    return Singleton.#instance;
+    DatabaseConnection.#instance = new DatabaseConnection();
+    return DatabaseConnection.#instance;
   }
 
-  sampleMethod() {
-    console.log("A sample method");
+  isConnected() {
+    return DatabaseConnection.#instance !== null;
   }
 }
 
-const singleton1 = Singleton.getInstance();
-const singleton2 = Singleton.getInstance();
+const connection1 = DatabaseConnection.create();
+const connection2 = DatabaseConnection.create();
 
-console.log(singleton1 === singleton2);
+console.log(connection1 === connection2);
 
-singleton1.sampleMethod();
+console.log(connection1.isConnected());
