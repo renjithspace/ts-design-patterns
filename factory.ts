@@ -3,13 +3,13 @@ abstract class Driver {
 }
 
 class SMTP extends Driver {
-  send(): string {
+  send() {
     return "Mail send using SMTP";
   }
 }
 
 class Mailgun extends Driver {
-  send(): string {
+  send() {
     return "Mail send using Mailgun";
   }
 }
