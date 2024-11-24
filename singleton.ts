@@ -7,15 +7,16 @@ class Singleton {
     }
   }
 
-  static getInstance() {
+  static getInstance(): Singleton {
     if (Singleton.#instance) {
       return Singleton.#instance;
     }
-    return (Singleton.#instance = new Singleton());
+    Singleton.#instance = new Singleton();
+    return Singleton.#instance;
   }
 
   sampleMethod() {
-    console.log("The sample method");
+    console.log("A sample method");
   }
 }
 
