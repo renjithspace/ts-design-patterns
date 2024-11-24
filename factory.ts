@@ -15,13 +15,13 @@ class Mailgun extends Driver {
 }
 
 class Mail {
-  static connect(Driver: new () => Driver): Driver {
+  static use(Driver: new () => Driver): Driver {
     return new Driver();
   }
 }
 
-const smtp = Mail.connect(SMTP);
+const smtp = Mail.use(SMTP);
 console.log(smtp.send());
 
-const mailgun = Mail.connect(Mailgun);
+const mailgun = Mail.use(Mailgun);
 console.log(mailgun.send());
