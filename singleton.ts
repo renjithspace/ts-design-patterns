@@ -15,7 +15,7 @@ class DatabaseConnection {
     return DatabaseConnection.#instance;
   }
 
-  isConnected() {
+  isActive() {
     return DatabaseConnection.#instance !== null;
   }
 }
@@ -25,4 +25,4 @@ const connection2 = DatabaseConnection.create();
 
 console.log(connection1 === connection2);
 
-console.log(connection1.isConnected());
+console.log(connection1.isActive());
