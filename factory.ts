@@ -15,8 +15,8 @@ class Mailgun extends Driver {
 }
 
 class Mail {
-  static connect(Class: new () => Driver): Driver {
-    return new Class();
+  static connect(Driver: new () => Driver): Driver {
+    return new Driver();
   }
 }
 
